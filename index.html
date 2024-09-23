@@ -81,10 +81,6 @@
             background-color: #218838;
         }
 
-        .g-recaptcha {
-            margin-bottom: 15px;
-        }
-
     </style>
 </head>
 <body>
@@ -111,10 +107,6 @@
                 <input type="tel" id="phone" name="phone" required>
                 <label for="message">Message:</label>
                 <textarea id="message" name="message" required></textarea>
-                
-                <!-- Google reCAPTCHA Widget -->
-                <div class="g-recaptcha" data-sitekey="YOUR_SITE_KEY"></div> <!-- Replace with your site key -->
-
                 <button type="submit">Send</button>
             </form>
         </div>
@@ -123,9 +115,6 @@
     <footer>
         <p>&copy; 2023 Car Dealership. All rights reserved.</p>
     </footer>
-
-    <!-- Include Google reCAPTCHA API -->
-    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 
     <!-- Include EmailJS SDK -->
     <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
@@ -139,12 +128,6 @@
         // Handling form submission via EmailJS
         document.getElementById('contact-form').addEventListener('submit', function(event) {
             event.preventDefault();
-
-            // Check if reCAPTCHA is completed
-            if (grecaptcha.getResponse() === '') {
-                alert('Please verify that you are not a robot.');
-                return;
-            }
 
             // Send form data via EmailJS
             emailjs.sendForm('service_tn9ia3a', 'YOUR_TEMPLATE_ID', this)
