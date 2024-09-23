@@ -41,32 +41,6 @@
             border-radius: 8px;
         }
 
-        .car {
-            border: 1px solid #ccc;
-            padding: 10px;
-            margin: 10px;
-            text-align: center;
-            transition: transform 0.2s;
-        }
-
-        .car:hover {
-            transform: scale(1.05);
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        }
-
-        .buy-button {
-            padding: 10px 15px;
-            background-color: #28a745;
-            border: none;
-            color: white;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
-
-        .buy-button:hover {
-            background-color: #218838;
-        }
-
         footer {
             text-align: center;
             padding: 10px;
@@ -74,42 +48,39 @@
             color: #fff;
         }
 
-        /* Responsive design */
-        @media (max-width: 768px) {
-            nav ul li {
-                display: block;
-                text-align: center;
-                margin: 10px 0;
-            }
-
-            .car {
-                width: 100%;
-                margin: 10px auto;
-            }
-
-            section {
-                margin: 10px;
-            }
+        .contact-form {
+            width: 100%;
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
 
-        .contact-buttons {
-            margin: 20px 0;
-            text-align: center;
-        }
-
-        .contact-buttons button {
-            padding: 10px 15px;
-            margin: 10px;
-            cursor: pointer;
-            border: none;
-            background-color: #25D366;
-            color: white;
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
             border-radius: 5px;
         }
 
-        .email-button {
-            background-color: #007BFF;
+        .contact-form button {
+            padding: 10px 15px;
+            background-color: #28a745;
+            border: none;
+            color: white;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s;
         }
+
+        .contact-form button:hover {
+            background-color: #218838;
+        }
+
     </style>
 </head>
 <body>
@@ -124,92 +95,48 @@
         </nav>
     </header>
 
-    <section id="cars">
-        <h2>Our Cars</h2>
-        <div class="car">
-            <img src="car1.jpg" alt="Car 1">
-            <h3>Car Model 1</h3>
-            <p>Price: $20,000</p>
-            <button class="buy-button" onclick="openBuyForm('Car Model 1')">Buy Now</button>
-        </div>
-        <div class="car">
-            <img src="car2.jpg" alt="Car 2">
-            <h3>Car Model 2</h3>
-            <p>Price: $25,000</p>
-            <button class="buy-button" onclick="openBuyForm('Car Model 2')">Buy Now</button>
-        </div>
-    </section>
-
-    <section id="about">
-        <h2>About Us</h2>
-        <p>We are a leading car dealership offering the best prices and selections.</p>
-    </section>
-
     <section id="contact">
         <h2>Contact Us</h2>
-        <div class="contact-buttons">
-            <button onclick="openWhatsApp('+254746640048')">WhatsApp Us (+254746640048)</button>
-            <button onclick="openWhatsApp('+254721991529')">WhatsApp Us (+254721991529)</button>
-            <button class="email-button" onclick="openEmail()">Email Us (stanleymakanga45@gmail.com)</button>
+        <div class="contact-form">
+            <form id="contact-form">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                <label for="phone">Phone Number:</label>
+                <input type="tel" id="phone" name="phone" required>
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" required></textarea>
+                <button type="submit">Send</button>
+            </form>
         </div>
-        
-        <h3>Leave a Message</h3>
-        <form id="contact-form">
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="name" required>
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
-            <label for="message">Message:</label>
-            <textarea id="message" name="message" required></textarea>
-            <button type="submit">Send</button>
-        </form>
     </section>
 
     <footer>
         <p>&copy; 2023 Car Dealership. All rights reserved.</p>
     </footer>
 
-    <!-- Add JavaScript at the end of the body -->
+    <!-- Include EmailJS SDK -->
+    <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function(){
+            emailjs.init("YOUR_USER_ID"); // Replace with your EmailJS user ID
+        })();
+    </script>
+
     <script>
-        // WhatsApp Integration for buttons
-        function openWhatsApp(phoneNumber) {
-            const message = 'Hello, I would like to inquire about your car dealership.';
-            const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
-            window.open(url, '_blank');
-        }
+        // Handling form submission via EmailJS
+        document.getElementById('contact-form').addEventListener('submit', function(event) {
+            event.preventDefault();
 
-        // Email Integration
-        function openEmail() {
-            window.location.href = "mailto:stanleymakanga45@gmail.com";
-        }
-
-        // Handling form submission and forwarding data to WhatsApp
-        document.getElementById('contact-form').addEventListener('submit', function (e) {
-            e.preventDefault();
-            const name = document.getElementById('name').value;
-            const email = document.getElementById('email').value;
-            const message = document.getElementById('message').value;
-
-            const whatsappMessage = `Name: ${name}%0AEmail: ${email}%0AMessage: ${message}`;
-            const whatsappUrl = `https://wa.me/+254721991529?text=${whatsappMessage}`;
-            window.open(whatsappUrl, '_blank');
+            // Send form data via EmailJS
+            emailjs.sendForm('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', this)
+                .then(function(response) {
+                    alert('Message sent successfully! We will get back to you soon.');
+                }, function(error) {
+                    alert('There was an error sending your message. Please try again.');
+                });
         });
-
-        // Buy Now Form Prompt
-        function openBuyForm(carModel) {
-            const email = prompt('Enter your email address:');
-            const phone = prompt('Enter your phone number:');
-            const location = prompt('Enter your current location (Town, Apartment Name):');
-
-            if (email && phone && location) {
-                const message = `Car Model: ${carModel}%0AEmail: ${email}%0APhone: ${phone}%0ALocation: ${location}`;
-                const url = `https://wa.me/+254721991529?text=${encodeURIComponent(message)}`;
-                window.open(url, '_blank');
-                alert('Thank you for your interest! We will contact you soon.');
-            } else {
-                alert('Please provide all the required details.');
-            }
-        }
     </script>
 </body>
 </html>
