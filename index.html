@@ -1,267 +1,215 @@
 <!DOCTYPE html>
-
 <html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Dealership</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
 
+        header {
+            background: #333;
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        section {
+            padding: 20px;
+            margin: 20px;
+            background: #fff;
+            border-radius: 8px;
+        }
+
+        .car {
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin: 10px;
+            text-align: center;
+            transition: transform 0.2s;
+        }
+
+        .car:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .buy-button {
+            padding: 10px 15px;
+            background-color: #28a745;
+            border: none;
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .buy-button:hover {
+            background-color: #218838;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            background: #333;
+            color: #fff;
+        }
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+            nav ul li {
+                display: block;
+                text-align: center;
+                margin: 10px 0;
+            }
+
+            .car {
+                width: 100%;
+                margin: 10px auto;
+            }
+
+            section {
+                margin: 10px;
+            }
+        }
+
+        .contact-buttons {
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        .contact-buttons button {
+            padding: 10px 15px;
+            margin: 10px;
+            cursor: pointer;
+            border: none;
+            background-color: #25D366;
+            color: white;
+            border-radius: 5px;
+        }
+
+        .email-button {
+            background-color: #007BFF;
+        }
+    </style>
+</head>
+<body>
     <header>
-
-        <meta charset="UTF-8">
-
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-
-        <meta name="Viewpoirt" content="width=device-width, initial-scale-1.0">
-
-        <title>whatsapp hack</title>
-
-        <link rel="stylesheet" href="">
-
-        <style>
-
-            body{
-
-                font-family: Arial, Helvetica, sans-serif;
-
-                margin: 0;
-
-                padding: 0;
-
-                background-color: rgb(204, 191, 191);
-
-                front-family: poppins;
-
-            }
-
-            footer{
-
-                color: rgb(178, 208, 28);
-
-                margin-left: 13em;
-
-                background-color: black;
-
-                margin-right: 13em;
-
-            }
-
-            .wrapper{
-
-                max-width: 1200px;
-
-                margin: 0%;
-
-            }
-
-            header{
-
-                display: block;
-
-                align-items: center;
-
-                color: rgb(0, 0, 0);
-
-                background-color: rgb(245, 238, 228);
-
-                font-style: italic;
-
-                font-size: x-large;
-
-                font-weight: 300;
-
-                text-transform: var(11em);
-
-                margin-left: 0em;
-
-                margin-top: 3em;
-
-                margin-right: 0em;
-
-            }
-
-            nav ul{
-
-                list-style: lower-roman;
-
-                color: rgb(232, 233, 233);
-
-                text-transform: none;
-
-                front-size: 1.9rem;
-
-                position: relative;
-
-                background-color: rgb(58, 52, 52);
-
-                font-display: optional;
-
-                font-style: normal;
-
-                gap: 10em;
-
-                margin-top: 5rem;
-
-                margin-left: 3em;
-
-                margin-right: 8em;
-
-                margin-bottom: 3em;
-
-
-
-            }
-
-            nav ul li a.active: before{
-
-                position: absolute;
-
-                content: "";
-
-                width: 35%;
-
-                height: 1px;
-
-                border-bottom: 2px solid blueviolet;
-
-                bottom: -6px
-
-            }
-
-            main{
-
-                display: block;
-
-                gap: 8em;
-
-                margin-top: 11em;
-
-                font-style: inherit;
-
-                color: white;
-
-                background-color: grey;
-
-                margin-left: 5em;
-
-                margin-right: 5em;
-
-                margin-bottom: 10 em;
-
-            }
-
-        </style>
-
+        <h1>Welcome to Our Car Dealership</h1>
+        <nav>
+            <ul>
+                <li><a href="#cars">Cars</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
     </header>
 
-    <body>
-
-        <div class="wrapper">
-
-             <header>
-
-                <a href="#"><img src="IMG_20240324_211239.jpg" alt="creator logo"></a>
-
-                <h1>HOW TO HACK WHATSAPP ACCOUNT IN 5 MINUTES</h1>
-
-                <nav>
-
-                    <ul>
-
-                        <h2>REQUIREMENTS</h2>
-
-                        <li>Mobile Phone <strong>Rooted</strong>.</li>
-
-                        <li>Target's phone for 5 minutes.</li>
-
-                        <li>Busybox and terminal app installed on your android device.</li>
-
-                        <li>Wi-Fi scanner(If you can't reach target's phone getting his /her mac address through setting).</li>
-
-                    </ul>
-
-                </nav>
-
-            </header>
-
+    <section id="cars">
+        <h2>Our Cars</h2>
+        <div class="car">
+            <img src="car1.jpg" alt="Car 1">
+            <h3>Car Model 1</h3>
+            <p>Price: $20,000</p>
+            <button class="buy-button" onclick="openBuyForm('Car Model 1')">Buy Now</button>
         </div>
+        <div class="car">
+            <img src="car2.jpg" alt="Car 2">
+            <h3>Car Model 2</h3>
+            <p>Price: $25,000</p>
+            <button class="buy-button" onclick="openBuyForm('Car Model 2')">Buy Now</button>
+        </div>
+    </section>
 
-        <main>
+    <section id="about">
+        <h2>About Us</h2>
+        <p>We are a leading car dealership offering the best prices and selections.</p>
+    </section>
 
-            <section>
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <div class="contact-buttons">
+            <button onclick="openWhatsApp('+254746640048')">WhatsApp Us (+254746640048)</button>
+            <button onclick="openWhatsApp('+254721991529')">WhatsApp Us (+254721991529)</button>
+            <button class="email-button" onclick="openEmail()">Email Us (stanleymakanga45@gmail.com)</button>
+        </div>
+        
+        <h3>Leave a Message</h3>
+        <form id="contact-form">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" required></textarea>
+            <button type="submit">Send</button>
+        </form>
+    </section>
 
-                <h3>About this information.</h3>
+    <footer>
+        <p>&copy; 2023 Car Dealership. All rights reserved.</p>
+    </footer>
 
-                <p>This information is for educational purpose only.</p>
+    <!-- Add JavaScript at the end of the body -->
+    <script>
+        // WhatsApp Integration for buttons
+        function openWhatsApp(phoneNumber) {
+            const message = 'Hello, I would like to inquire about your car dealership.';
+            const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+            window.open(url, '_blank');
+        }
 
-            </section>
+        // Email Integration
+        function openEmail() {
+            window.location.href = "mailto:stanleymakanga45@gmail.com";
+        }
 
-            <section>
+        // Handling form submission and forwarding data to WhatsApp
+        document.getElementById('contact-form').addEventListener('submit', function (e) {
+            e.preventDefault();
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const message = document.getElementById('message').value;
 
-                <h3>PROCEDURE</h3>
+            const whatsappMessage = `Name: ${name}%0AEmail: ${email}%0AMessage: ${message}`;
+            const whatsappUrl = `https://wa.me/+254721991529?text=${whatsappMessage}`;
+            window.open(whatsappUrl, '_blank');
+        });
 
-                <ul>
+        // Buy Now Form Prompt
+        function openBuyForm(carModel) {
+            const email = prompt('Enter your email address:');
+            const phone = prompt('Enter your phone number:');
+            const location = prompt('Enter your current location (Town, Apartment Name):');
 
-                    <li>Uninstall Whatsapp from your phone or device. You’ll install it again at the end of the method, but you’ll need to configure it differently, and the easiest way to make sure you’ll be able to do that correctly is to completely uninstall it now.</li>
-
-                    <li>Obtain your target’s phone. You’ll need it for 2 different steps throughout the process, but this shouldn’t take too long: you should be able to return it before your target start to miss it.</li>
-
-                    <li>Find your target’s phone’s Media Access Control(MAC) address. A MAC address is unique identifier assigned to your phone or other devices that essentially serves as its online identity. Find and write down your target’s MAC address. It takes form of six pairs of letters and numbers, separated by colons (e.g., 01:23:45:89:ab).</li>
-
-                    <p>a.	On an Android, find this setting → General → About phone → Status → Wi-Fi Address.</p>
-
-                    <p>b.	On an iPhone go to Settings → General → About → Wi-Fi Address.</p>
-
-                    <p>c.	On a windows phone, look in Settings → About → More info → MAC address.</p>
-
-                    <p>d.	On a BlackBerry, go to options → Device → Device and Status info → WLAN MAC.</p>
-
-                    <li>Find your MAC address using the instructions above. Make sure to save it somewhere secure as you will want it to change your device to that address once you’re done.</li>
-
-                    <li>Change (“spoof”) your phone’s MAC address to that of your target. This will allow your phone to pass as your target’s, letting you convince WhatsApp that you are your target when you log in.</li>
-
-                </ul>
-
-            </section>
-
-            <section>
-
-                <h4>NOTE</h4>
-
-                <ul>
-
-                    <li>ON an iPhone or other device, install a MAC spoofing app like MacDaddy X or WifiSpoof. Use that to change your MAC address.</li>
-
-                </ul>
-
-            </section>
-
-            <section>
-
-                <li>At this point you should be done with the hacking. If not repeat the procedure,</li>
-
-            </section>
-
-            <section>
-
-                <li>Thank you for visiting this site</li>
-
-                <li>Happy hacking</li>
-
-            </section>
-
-            <section>
-
-                <p>Follow my profile on facebook by clicking the link below for more hacking information.</p>
-
-                <a href="https://www.facebook.com/share/fw9cSRN4zBGooRcF/?mibextid=qi2Omg" alt="Facebook">Facebook Profile</a>
-
-            </section>
-
-        </main>
-
-        <footer>
-
-            <p>&copy; 2024 Stanley. All rights reserved. Developed by Stanley.</p>
-
-        </footer>
-
-    </body>
-
-    </html>
+            if (email && phone && location) {
+                const message = `Car Model: ${carModel}%0AEmail: ${email}%0APhone: ${phone}%0ALocation: ${location}`;
+                const url = `https://wa.me/+254721991529?text=${encodeURIComponent(message)}`;
+                window.open(url, '_blank');
+                alert('Thank you for your interest! We will contact you soon.');
+            } else {
+                alert('Please provide all the required details.');
+            }
+        }
+    </script>
+</body>
+</html>
